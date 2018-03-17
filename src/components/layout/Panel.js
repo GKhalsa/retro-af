@@ -7,7 +7,7 @@ class Panel extends Component {
 
     state = {
         inputValue: "",
-        cards: []
+        cardValues: []
     };
 
     panelStyle = () => ({backgroundColor: this.props.color});
@@ -21,7 +21,7 @@ class Panel extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.state.cards.push(<Card value={this.state.inputValue} />);
+        this.state.cardValues.push(this.state.inputValue);
         this.setState({inputValue: ""});
     };
 
@@ -32,8 +32,8 @@ class Panel extends Component {
     );
 
     renderCards = () => {
-      return this.state.cards.map((card) => {
-          return card;
+      return this.state.cardValues.map((cardValue, index) => {
+          return <Card key={index} value={cardValue}/>
       })
     };
 
