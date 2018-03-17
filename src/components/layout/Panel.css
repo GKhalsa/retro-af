@@ -1,0 +1,27 @@
+.panel {
+    flex: 1;
+    height: 100vh;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+input {
+    border: none;
+    border-radius: 1px;
+    color: white;
+    flex: 1;
+    height: 2rem;
+}
+
+input::placeholder {
+    color: white;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #719ECE;
+}
