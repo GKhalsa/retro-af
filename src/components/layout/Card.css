@@ -19,13 +19,13 @@
 }
 
 .card--grow {
-    transform: scale(1.5);
+    transform: scale(1.2);
     transition-duration: 1s;
 }
 
 .heart-container {
     align-self: center;
-    cursor: pointer ;
+    cursor: pointer;
 }
 
 .card-text {
@@ -44,13 +44,15 @@
     padding-left: 0.3rem;
 }
 
-.card-text__input {
+.text__input {
     border: none;
 }
 
-.card-text__input:focus {
+.text__input:focus {
     outline: none;
 }
 
-
-
+.checkmark-image {
+    width: 1rem;
+    cursor: pointer;
+}

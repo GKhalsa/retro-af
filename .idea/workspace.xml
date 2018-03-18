@@ -4,8 +4,6 @@
     <list default="true" id="36c79861-0e51-4ef1-ae0c-110cafabf597" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/layout/Card.css" afterPath="$PROJECT_DIR$/src/components/layout/Card.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/layout/Card.js" afterPath="$PROJECT_DIR$/src/components/layout/Card.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/layout/Panel.css" afterPath="$PROJECT_DIR$/src/components/layout/Panel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/layout/Panel.js" afterPath="$PROJECT_DIR$/src/components/layout/Panel.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,11 +62,9 @@
           <file leaf-file-name="Card.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/layout/Card.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-                  <folding>
-                    <marker date="1521405375000" expanded="true" signature="6:252" ph="{...}" />
-                  </folding>
+                <state relative-caret-position="315">
+                  <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -104,8 +100,8 @@
           <file leaf-file-name="Card.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/layout/Card.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+                <state relative-caret-position="768">
+                  <caret line="58" column="18" lean-forward="true" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -138,8 +134,8 @@
         <option value="$PROJECT_DIR$/src/components/layout/PanelContainer.js" />
         <option value="$PROJECT_DIR$/src/components/layout/Panel.js" />
         <option value="$PROJECT_DIR$/src/components/layout/Panel.css" />
-        <option value="$PROJECT_DIR$/src/components/layout/Card.css" />
         <option value="$PROJECT_DIR$/src/components/layout/Card.js" />
+        <option value="$PROJECT_DIR$/src/components/layout/Card.css" />
       </list>
     </option>
   </component>
@@ -221,6 +217,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retro-af" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retro-af" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -649,12 +663,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521307134734</updated>
-      <workItem from="1521307136625" duration="17814000" />
+      <workItem from="1521307136625" duration="19964000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17814000" />
+    <option name="totallyTimeSpent" value="19964000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1676" height="1027" extended-state="6" />
@@ -767,23 +781,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/layout/Card.css">
+    <entry file="file://$PROJECT_DIR$/src/components/layout/Card.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="768">
+          <caret line="58" column="18" lean-forward="true" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
           <folding>
-            <marker date="1521405375000" expanded="true" signature="6:252" ph="{...}" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/layout/Card.js">
+    <entry file="file://$PROJECT_DIR$/src/components/layout/Card.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="315">
+          <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

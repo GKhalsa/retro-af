@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Card.css';
-import heart from '../../assets/hearts.png'
+import heart from '../../assets/hearts.png';
+import checkmark from '../../assets/checkmark.png';
 
 class Card extends Component {
 
@@ -21,17 +22,25 @@ class Card extends Component {
         this.setState((prevState) => ({heartCount: prevState.heartCount + 1}))
     };
 
-    growCardSwitch = () => {
-      this.setState((prevState) => {
-          const style = prevState.cardGrowth ? "" : "card--grow";
-          const displayCardFinishButton = style ? true : false;
-          return {cardGrowth: style, displayCardFinishButton: displayCardFinishButton};
-      })
+    appropriateClickCheck = (e) => {
+        return e.target.classList.value.includes("card");
+    };
+
+    growCardSwitch = (e) => {
+      if (this.appropriateClickCheck(e)) {this._growOrShrink()}
+    };
+
+    _growOrShrink = () => {
+        this.setState((prevState) => {
+            const style = prevState.cardGrowth ? "" : "card--grow";
+            return {cardGrowth: style};
+        })
     };
 
     render() {
+        const { cardGrowth, cardGreyedOut } = this.state;
         return (
-            <div tabIndex="0" className={`card ${this.state.cardGrowth}`} onClick={this.growCardSwitch}>
+            <div tabIndex="0" className={`card ${cardGrowth} ${cardGreyedOut}`} onClick={this.growCardSwitch}>
                 <div className="heart-container" onClick={this.addToHeartCount}>
                     <img className="heart-image" src={heart} alt=""/>
                     <div className="heart-count">
@@ -40,8 +49,13 @@ class Card extends Component {
                 </div>
 
                 <div className="card-text">
-                    <input className="card-text__input" type="text" value={this.state.cardText} onChange={(e) => this.setState({cardText: e.target.value})}/>
+                    <input className="text__input" type="text" value={this.state.cardText} onChange={(e) => this.setState({cardText: e.target.value})}/>
                 </div>
+
+                <div onClick={() => this.setState({cardGrowth: "", cardGreyedOut: "card--greyed-out"})}>
+                    <img className="checkmark-image" src={checkmark} alt=""/>
+                </div>
+
             </div>
         )
     }
