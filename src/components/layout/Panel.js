@@ -27,7 +27,7 @@ class Panel extends Component {
 
     renderInput = () => (
         <form className="center-content" onSubmit={this.handleSubmit}>
-            <input style={this.inputStyle()} value={this.state.inputValue} onChange={(e) => this.setState({inputValue: e.target.value})} type="text" placeholder={this.props.inputText}/>
+            <input className="panel-text__input" style={this.inputStyle()} value={this.state.inputValue} onChange={(e) => this.setState({inputValue: e.target.value})} type="text" placeholder={this.props.inputText}/>
         </form>
     );
 

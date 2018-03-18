@@ -8,8 +8,24 @@
     box-shadow: 0px 0px 8px -3px #000000;
 }
 
+.card--greyed-out {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.card:focus {
+    outline: none;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.card--grow {
+    transform: scale(1.5);
+    transition-duration: 1s;
+}
+
 .heart-container {
     align-self: center;
+    cursor: pointer ;
 }
 
 .card-text {
@@ -19,12 +35,22 @@
     flex: 1;
 }
 
-img {
+.heart-image {
     width: 1rem;
     padding: 0.1rem;
-    cursor: pointer ;
 }
 
 .heart-count {
     padding-left: 0.3rem;
 }
+
+.card-text__input {
+    border: none;
+}
+
+.card-text__input:focus {
+    outline: none;
+}
+
+
+
