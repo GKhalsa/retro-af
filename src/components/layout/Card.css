@@ -46,6 +46,7 @@
 
 .text__input {
     border: none;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .text__input:focus {
@@ -55,4 +56,8 @@
 .checkmark-image {
     width: 1rem;
     cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
 }

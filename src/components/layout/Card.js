@@ -52,7 +52,7 @@ class Card extends Component {
                     <input className="text__input" type="text" value={this.state.cardText} onChange={(e) => this.setState({cardText: e.target.value})}/>
                 </div>
 
-                <div onClick={() => this.setState({cardGrowth: "", cardGreyedOut: "card--greyed-out"})}>
+                <div className={`${cardGrowth ? "" : "hidden"}`} onClick={() => this.setState({cardGrowth: "", cardGreyedOut: "card--greyed-out"})}>
                     <img className="checkmark-image" src={checkmark} alt=""/>
                 </div>
 
