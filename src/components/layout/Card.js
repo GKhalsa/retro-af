@@ -10,16 +10,19 @@ class Card extends Component {
         super(props);
 
         this.state = {
-            heartCount: 0,
-            cardText: this.props.value,
-            cardGrowth: "",
-            displayCardFinishButton: false,
-            cardGreyedOut: ""
+            // heartCount: 0,
+            cardText: this.props.data.cardText,
+            // cardGrowth: "",
+            // displayCardFinishButton: false,
+            // cardGreyedOut: ""
         }
     }
 
     addToHeartCount = () => {
-        this.setState((prevState) => ({heartCount: prevState.heartCount + 1}))
+        const card = {...this.props.data};
+        const newHeartCount = card.heartCount + 1;
+        card['heartCount'] = newHeartCount;
+        this.props.updateCard(card);
     };
 
     appropriateClickCheck = (e) => {
@@ -31,28 +34,43 @@ class Card extends Component {
     };
 
     _growOrShrink = () => {
-        this.setState((prevState) => {
-            const style = prevState.cardGrowth ? "" : "card--grow";
-            return {cardGrowth: style};
-        })
+        const card = {...this.props.data};
+        const style = card.cardGrowth ? "" : "card--grow";
+        card['cardGrowth'] = style;
+        this.props.updateCard(card)
     };
 
+    finishTheCard = (cardGrowth, cardGreyedOut) => {
+        const card = {...this.props.data};
+        card['cardGrowth'] = "";
+        card['cardGreyedOut'] = "card--greyed-out";
+        this.props.updateCard(card);
+    };
+
+    updateText = (e) => {
+        const newText = e.target.value;
+        const card = {...this.props.data};
+        card['cardText'] = newText;
+        this.props.updateCard(card);
+    };
+
+
     render() {
-        const { cardGrowth, cardGreyedOut } = this.state;
+        const { cardGrowth, cardGreyedOut, heartCount, cardText } = this.props.data;
         return (
             <div tabIndex="0" className={`card ${cardGrowth} ${cardGreyedOut}`} onClick={this.growCardSwitch}>
                 <div className="heart-container" onClick={this.addToHeartCount}>
                     <img className="heart-image" src={heart} alt=""/>
                     <div className="heart-count">
-                        {this.state.heartCount}
+                        {heartCount}
                     </div>
                 </div>
 
                 <div className="card-text">
-                    <input className="text__input" type="text" value={this.state.cardText} onChange={(e) => this.setState({cardText: e.target.value})}/>
+                    <input className="text__input" type="text" value={cardText} onChange={(e) => this.updateText(e)}/>
                 </div>
 
-                <div className={`${cardGrowth ? "" : "hidden"}`} onClick={() => this.setState({cardGrowth: "", cardGreyedOut: "card--greyed-out"})}>
+                <div className={`${cardGrowth ? "" : "hidden"}`} onClick={this.finishTheCard}>
                     <img className="checkmark-image" src={checkmark} alt=""/>
                 </div>
 

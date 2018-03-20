@@ -2,13 +2,27 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import './Panel.css';
 import Card from "./Card";
+import { base } from '../../base';
+import { withRouter } from 'react-router-dom'
 
 class Panel extends Component {
 
     state = {
         inputValue: "",
-        cardValues: []
+        cards: {}
     };
+
+    componentWillMount() {
+        const path = this.props.location.pathname;
+        this.panelRef = base.syncState(path + "-" + this.props.header, {
+            context: this,
+            state: 'cards',
+        })
+    }
+
+    componentWillUnmount() {
+        base.removeBinding(this.panelRef);
+    }
 
     panelStyle = () => ({backgroundColor: this.props.color});
     inputStyle = () => ({backgroundColor: this.props.inputColor});
@@ -21,8 +35,18 @@ class Panel extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.state.cardValues.push(this.state.inputValue);
-        this.setState({inputValue: ""});
+        const cards = {...this.state.cards};
+        const id = Date.now();
+        const newCard = {
+            id,
+            heartCount: 0,
+            cardText: this.state.inputValue,
+            cardGrowth: "",
+            displayCardFinishButton: false,
+            cardGreyedOut: ""
+        };
+        cards[id] = {...newCard};
+        this.setState({inputValue: "", cards});
     };
 
     renderInput = () => (
@@ -31,10 +55,17 @@ class Panel extends Component {
         </form>
     );
 
+    updateCard = (card) => {
+        const cards = {...this.state.cards};
+        cards[card.id] = card;
+        this.setState({cards})
+    };
+
+
     renderCards = () => {
-      return this.state.cardValues.map((cardValue, index) => {
-          return <Card key={index} value={cardValue}/>
-      })
+        return Object.keys(this.state.cards).map((id, index) => {
+           return <Card key={index}  data={this.state.cards[id]} updateCard={this.updateCard}/>
+        });
     };
 
     render() {
@@ -42,7 +73,9 @@ class Panel extends Component {
             <div style={this.panelStyle()} className="panel">
                 {this.renderHeader()}
                 {this.renderInput()}
-                {this.renderCards()}
+                <div className="panel__cards">
+                    {this.renderCards()}
+                </div>
             </div>
         )
     }
@@ -55,5 +88,5 @@ Panel.PropTypes = {
     inputColor: PropTypes.string.isRequired
 };
 
-export default Panel;
+export default withRouter(Panel);
 
