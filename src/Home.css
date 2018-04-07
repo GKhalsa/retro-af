@@ -1,0 +1,14 @@
+.home__container {
+    display: flex;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__enter {
+    /*background-color: #8AEAD8;*/
+    background-image: -webkit-linear-gradient(30deg, #4D6863 50%, #7ABCAF 50%);
+    height: 14rem;
+    width: 20rem;
+    border-radius: 2px;
+}

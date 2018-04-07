@@ -5,6 +5,7 @@
 
 .panel__cards {
     overflow: scroll;
+    height: 31rem;
 }
 
 .center-content {
