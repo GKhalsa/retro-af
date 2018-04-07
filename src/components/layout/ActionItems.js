@@ -25,7 +25,7 @@ class ActionItems extends Component {
 
     render() {
 
-        const actionItems = Object.keys(this.state.items).map((id, index) => {
+        const actionItems = Object.keys(this.state.items).reverse().map((id, index) => {
             const data = this.state.items[id];
             return <ActionItem key={index} {...data} updateActionItem={this.updateActionItem}/>
         });
@@ -36,6 +36,7 @@ class ActionItems extends Component {
                 <div className="action-items__header">
                     <form onSubmit={this.addItem}>
                         <input className="header__input" value={this.state.inputValue} onChange={(e) => this.setState({inputValue: e.target.value})} type="text" placeholder="Action Items" />
+                        <button>Remove Checked Items</button>
                     </form>
                 </div>
 
