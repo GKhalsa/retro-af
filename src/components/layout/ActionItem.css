@@ -7,6 +7,16 @@
     margin-top: 0.3rem;
 }
 
+.action-item__checkbox--checked {
+    width: .5rem;
+    height: .5rem;
+    border-style: solid;
+    border-color: aquamarine;
+    border-radius: 2px;
+    margin-top: 0.3rem;
+    background-color: aquamarine;
+}
+
 .action-item__container {
     display: flex;
 }
@@ -22,7 +32,7 @@
     position: absolute;
     top: 0px; bottom: 0px;
     margin-top: 0.5rem;
-    animation: strikethrough 1.75s 1 forwards;
+    animation: strikethrough .55s 1 forwards;
 }
 
 @keyframes strikethrough {

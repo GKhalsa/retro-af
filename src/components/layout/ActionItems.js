@@ -13,15 +13,21 @@ class ActionItems extends Component {
       e.preventDefault();
       const id = Date.now();
       const items = {...this.state.items};
-      items[id] = {checked: false, value: this.state.inputValue};
+      items[id] = {checked: false, value: this.state.inputValue, id};
       this.setState({items, inputValue: ""})
+    };
+
+    updateActionItem = (item) => {
+        const items = {...this.state.items};
+        items[item.id] = (item);
+        this.setState({items});
     };
 
     render() {
 
         const actionItems = Object.keys(this.state.items).map((id, index) => {
             const data = this.state.items[id];
-            return <ActionItem key={index} {...data}/>
+            return <ActionItem key={index} {...data} updateActionItem={this.updateActionItem}/>
         });
 
         return (
