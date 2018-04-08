@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './ActionItems.css';
 import ActionItem from "./ActionItem";
+import { base } from '../../base';
+import { withRouter } from 'react-router-dom';
 
 class ActionItems extends Component {
 
@@ -8,6 +10,18 @@ class ActionItems extends Component {
         items: {},
         inputValue: ""
     };
+
+    componentWillMount() {
+        const path = this.props.location.pathname;
+        this.actionItemsRef = base.syncState(path, {
+            context: this,
+            state: 'items',
+        })
+    }
+
+    componentWillUnmount() {
+        base.removeBinding(this.actionItemsRef);
+    }
 
     addItem = (e) => {
         e.preventDefault();
@@ -29,13 +43,13 @@ class ActionItems extends Component {
                 acc[currentId] = {...this.state.items[currentId]};
                 return acc;
             }
+            acc[currentId] = null;
             return acc;
         }, {});
         this.setState({items: uncheckedItems});
     };
 
     render() {
-
         const actionItems = Object.keys(this.state.items).reverse().map((id, index) => {
             const data = this.state.items[id];
             return <ActionItem key={index} {...data} updateActionItem={this.updateActionItem}/>
@@ -50,7 +64,7 @@ class ActionItems extends Component {
                                onChange={(e) => this.setState({inputValue: e.target.value})} type="text"
                                placeholder="Action Items"/>
                     </form>
-                    <button onClick={this.removeCheckedItems}>Remove Checked Items</button>
+                    <button onClick={() => this.removeCheckedItems()}>Remove Checked Items</button>
                 </div>
 
                 <div className="action-items__body">
@@ -62,4 +76,4 @@ class ActionItems extends Component {
 
 }
 
-export default ActionItems;
+export default withRouter(ActionItems);
