@@ -3,10 +3,12 @@
     flex-direction: column;
     background-color: #e8dcdc;
     padding-top: 0.5rem;
+    min-height: 10vh;
 }
 
 .action-items__header {
-    align-self: center;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .action-items__body {

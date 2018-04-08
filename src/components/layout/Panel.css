@@ -1,11 +1,12 @@
 .panel {
     flex: 1;
-    height: 100vh;
+    /*height: 100vh;*/
+    height: 90vh;
 }
 
 .panel__cards {
     overflow: scroll;
-    height: 31rem;
+    height: 26rem;
 }
 
 .center-content {

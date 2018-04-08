@@ -36,8 +36,8 @@
 }
 
 .heart-image {
-    width: 1rem;
-    padding: 0.1rem;
+    width: 0.8rem;
+    padding: 0.2rem;
 }
 
 .heart-count {
@@ -47,6 +47,8 @@
 .text__input {
     border: none;
     font-family: 'Noto Sans', sans-serif;
+    height: 3rem;
+    resize:none;
 }
 
 .text__input:focus {

@@ -67,7 +67,7 @@ class Card extends Component {
                 </div>
 
                 <div className="card-text">
-                    <input className="text__input" type="text" value={cardText} onChange={(e) => this.updateText(e)}/>
+                    <textarea className="text__input" type="text" value={cardText} onChange={(e) => this.updateText(e)}/>
                 </div>
 
                 <div className={`${cardGrowth ? "" : "hidden"}`} onClick={this.finishTheCard}>

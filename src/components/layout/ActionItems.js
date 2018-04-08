@@ -36,8 +36,8 @@ class ActionItems extends Component {
                 <div className="action-items__header">
                     <form onSubmit={this.addItem}>
                         <input className="header__input" value={this.state.inputValue} onChange={(e) => this.setState({inputValue: e.target.value})} type="text" placeholder="Action Items" />
-                        <button>Remove Checked Items</button>
                     </form>
+                    <button>Remove Checked Items</button>
                 </div>
 
                 <div className="action-items__body">
