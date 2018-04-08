@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './ActionItems.css';
 import ActionItem from "./ActionItem";
 
@@ -10,17 +10,28 @@ class ActionItems extends Component {
     };
 
     addItem = (e) => {
-      e.preventDefault();
-      const id = Date.now();
-      const items = {...this.state.items};
-      items[id] = {checked: false, value: this.state.inputValue, id};
-      this.setState({items, inputValue: ""})
+        e.preventDefault();
+        const id = Date.now();
+        const items = {...this.state.items};
+        items[id] = {checked: false, value: this.state.inputValue, id};
+        this.setState({items, inputValue: ""})
     };
 
     updateActionItem = (item) => {
         const items = {...this.state.items};
         items[item.id] = (item);
         this.setState({items});
+    };
+
+    removeCheckedItems = () => {
+        const uncheckedItems = Object.keys(this.state.items).reduce((acc, currentId) => {
+            if (!this.state.items[currentId].checked) {
+                acc[currentId] = {...this.state.items[currentId]};
+                return acc;
+            }
+            return acc;
+        }, {});
+        this.setState({items: uncheckedItems});
     };
 
     render() {
@@ -35,9 +46,11 @@ class ActionItems extends Component {
 
                 <div className="action-items__header">
                     <form onSubmit={this.addItem}>
-                        <input className="header__input" value={this.state.inputValue} onChange={(e) => this.setState({inputValue: e.target.value})} type="text" placeholder="Action Items" />
+                        <input className="header__input" value={this.state.inputValue}
+                               onChange={(e) => this.setState({inputValue: e.target.value})} type="text"
+                               placeholder="Action Items"/>
                     </form>
-                    <button>Remove Checked Items</button>
+                    <button onClick={this.removeCheckedItems}>Remove Checked Items</button>
                 </div>
 
                 <div className="action-items__body">

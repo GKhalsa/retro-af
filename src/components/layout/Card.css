@@ -49,6 +49,7 @@
     font-family: 'Noto Sans', sans-serif;
     height: 3rem;
     resize:none;
+    text-align-last: center;
 }
 
 .text__input:focus {
