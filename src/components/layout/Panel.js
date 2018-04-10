@@ -14,7 +14,7 @@ class Panel extends Component {
 
     componentWillMount() {
         const path = this.props.location.pathname;
-        this.panelRef = base.syncState(path + "-" + this.props.header, {
+        this.panelRef = base.syncState(path + "/" + this.props.header, {
             context: this,
             state: 'cards',
         })

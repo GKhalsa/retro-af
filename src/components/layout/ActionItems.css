@@ -8,7 +8,7 @@
 
 .action-items__header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .action-items__body {

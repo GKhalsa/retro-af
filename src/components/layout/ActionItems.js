@@ -3,6 +3,7 @@ import './ActionItems.css';
 import ActionItem from "./ActionItem";
 import { base } from '../../base';
 import { withRouter } from 'react-router-dom';
+import { archiveFullRetro } from '../../api/PanelAPI'
 
 class ActionItems extends Component {
 
@@ -13,7 +14,7 @@ class ActionItems extends Component {
 
     componentWillMount() {
         const path = this.props.location.pathname;
-        this.actionItemsRef = base.syncState(path, {
+        this.actionItemsRef = base.syncState(`${path}/items`, {
             context: this,
             state: 'items',
         })
@@ -50,6 +51,7 @@ class ActionItems extends Component {
     };
 
     render() {
+        const path = this.props.location.pathname;
         const actionItems = Object.keys(this.state.items).reverse().map((id, index) => {
             const data = this.state.items[id];
             return <ActionItem key={index} {...data} updateActionItem={this.updateActionItem}/>
@@ -65,6 +67,7 @@ class ActionItems extends Component {
                                placeholder="Action Items"/>
                     </form>
                     <div className="action-items__header__button" onClick={() => this.removeCheckedItems()}>Remove Checked Items</div>
+                    <div className="action-items__header__button" onClick={() => archiveFullRetro(path)}>Archive Retro</div>
                 </div>
 
                 <div className="action-items__body">
