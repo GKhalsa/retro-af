@@ -4,6 +4,7 @@ import ActionItem from "./ActionItem";
 import { base } from '../../base';
 import { withRouter } from 'react-router-dom';
 import { archiveFullRetro } from '../../api/PanelAPI'
+import ArchiveRetroModal from '../modal/ArchiveRetroModal'
 
 class ActionItems extends Component {
 
@@ -68,6 +69,7 @@ class ActionItems extends Component {
                     </form>
                     <div className="action-items__header__button" onClick={() => this.removeCheckedItems()}>Remove Checked Items</div>
                     <div className="action-items__header__button" onClick={() => archiveFullRetro(path)}>Archive Retro</div>
+                    <ArchiveRetroModal/>
                 </div>
 
                 <div className="action-items__body">
