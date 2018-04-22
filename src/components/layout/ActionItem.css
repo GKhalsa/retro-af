@@ -26,6 +26,7 @@
 .action-item__value {
     padding-left: 0.5rem;
     position: relative;
+    font-size: 1.2rem;
 }
 
 .item__line {
@@ -33,7 +34,7 @@
     background: white;
     position: absolute;
     top: 0px; bottom: 0px;
-    margin-top: 0.5rem;
+    margin-top: 0.7rem;
     animation: strikethrough .55s 1 forwards;
 }
 

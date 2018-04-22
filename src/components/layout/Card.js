@@ -70,7 +70,7 @@ class Card extends Component {
                     <textarea className="text__input" type="text" value={cardText} onChange={(e) => this.updateText(e)}/>
                 </div>
 
-                <div className={`${cardGrowth ? "" : "hidden"}`} onClick={this.finishTheCard}>
+                <div className={`${cardGrowth}`} onClick={this.finishTheCard}>
                     <img className="checkmark-image" src={checkmark} alt=""/>
                 </div>
 

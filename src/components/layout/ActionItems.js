@@ -68,8 +68,7 @@ class ActionItems extends Component {
                                placeholder="Action Items"/>
                     </form>
                     <div className="action-items__header__button" onClick={() => this.removeCheckedItems()}>Remove Checked Items</div>
-                    <div className="action-items__header__button" onClick={() => archiveFullRetro(path)}>Archive Retro</div>
-                    <ArchiveRetroModal/>
+                    <ArchiveRetroModal path={path}/>
                 </div>
 
                 <div className="action-items__body">

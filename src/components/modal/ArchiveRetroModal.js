@@ -1,16 +1,8 @@
 import React, {Component} from 'react'
 import Modal from 'react-modal';
+import './ArchiveRetroModal.css';
+import { archiveFullRetro } from '../../api/PanelAPI'
 
-const customStyles = {
-    content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
-    }
-};
 
 export default class ArchiveRetroModal extends Component {
     state = {
@@ -28,30 +20,36 @@ export default class ArchiveRetroModal extends Component {
 
     closeModal = () =>  {
         this.setState({modalIsOpen: false});
-    }
+    };
+
+    closeModalAndArchiveRetro = () => {
+        archiveFullRetro(this.props.path);
+        this.closeModal();
+    };
 
     render () {
         return (
-            <div>
-                <button onClick={this.openModal}>Open Modal</button>
+            <div className="action-items__header__button">
+                <div onClick={this.openModal}>Archive Retro</div>
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
-                    style={customStyles}
+                    className="modal__internal"
+                    overlayClassName="modal__external"
                     contentLabel="Example Modal"
                 >
 
-                    <h2>Hello</h2>
-                    <button onClick={this.closeModal}>close</button>
-                    <div>I am a modal</div>
-                    <form>
-                        <input />
-                        <button>tab navigation</button>
-                        <button>stays</button>
-                        <button>inside</button>
-                        <button>the modal</button>
-                    </form>
+                    <div className="modal__text">
+                        <div>Archiving this retro will keep the action items, but remove all retro cards.</div>
+                        <div className="modal__text--ok">Is this ok?</div>
+                    </div>
+
+                    <div className="modal__button--container">
+                        <button onClick={this.closeModalAndArchiveRetro} className="modal__button modal__button--red">YES</button>
+                        <button onClick={this.closeModal} className="modal__button modal__button--grey">NO</button>
+                    </div>
+
                 </Modal>
             </div>
         )

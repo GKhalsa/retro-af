@@ -23,4 +23,24 @@ yarn-error.log*
 
 .idea/workspace.xml
 
+/.idea/*.xml
+/.idea/libraries/
+/.idea/modules/
+/.idea/*.name
+/.idea/copyright/
+/.idea/dataSources/*
+.gradle
+.DS_Store
+**/build
+**/npm-debug.log
+**/.DS_Store
+
+#Client
+dist
+node_modules
+coverage
+*.iml
+**/out
+/classes/**
+
 

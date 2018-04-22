@@ -29,7 +29,7 @@ class Panel extends Component {
 
     renderHeader = () => (
         <div className="center-content">
-            {this.props.header}
+            <img src={this.props.headerImage}/>
         </div>
     );
 
