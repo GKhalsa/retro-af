@@ -1,0 +1,54 @@
+.entrance-form__container {
+    position: absolute;
+    top: 5%;
+    left: 75%;
+    right: auto;
+    bottom: auto;
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: .25em;
+    outline: none;
+    margin-right: -50%;
+    width: 20em;
+    height: 8.5em;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.entrance-form__link-builder {
+    display: flex;
+    align-items: center;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+.entrance-form__text {
+    align-self: center;
+    padding-top: 2em;
+}
+
+.entrance-form__domain {
+    padding-left: 2em;
+}
+
+.entrance-form__input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #4b5fb3;
+    margin-left: 0.3em;
+    caret-color: rgb(0, 200, 0);
+}
+
+.entrance-form__input:focus {
+    outline:none;
+}
+
+.entrance-form__button{
+    margin-top: 0.5em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    font-family: 'Noto Sans', sans-serif;
+}
